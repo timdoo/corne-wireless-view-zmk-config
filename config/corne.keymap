@@ -102,27 +102,17 @@
         ue: ue {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp N0 &kp N0 &kp F &kp C>,
-                <&macro_release>,
-                <&kp LALT>;
+            bindings = <&macro_tap>, <&kp N0 &kp N0 &kp F &kp C>;
 
             label = "UE";
+            wait-ms = <1>;
+            tap-ms = <1>;
         };
 
         Ue: Ue {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp N0 &kp N0 &kp D &kp C>,
-                <&macro_release>,
-                <&kp LALT>;
+            bindings = <&macro_tap>, <&kp N0 &kp N0 &kp D &kp C>;
 
             label = "UE";
         };
