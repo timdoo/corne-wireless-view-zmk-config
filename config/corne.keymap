@@ -91,7 +91,7 @@
         world_u: world_u {
             compatible = "zmk,behavior-mod-morph";
             label = "WORLD_U";
-            bindings = <&ue>, <&Ue>;
+            bindings = <&ue>, <&uue>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -102,19 +102,32 @@
         ue: ue {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp N0 &kp N0 &kp F &kp C>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp F &kp C>,
+                <&macro_release>,
+                <&kp LALT>;
 
-            label = "UE";
             wait-ms = <1>;
             tap-ms = <1>;
         };
 
-        Ue: Ue {
+        uue: uue {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp N0 &kp N0 &kp D &kp C>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp D &kp C>,
+                <&macro_release>,
+                <&kp LALT>;
 
-            label = "UE";
+            label = "UUE";
+            wait-ms = <1>;
+            tap-ms = <1>;
         };
     };
 
