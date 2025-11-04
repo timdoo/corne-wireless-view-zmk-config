@@ -96,6 +96,24 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        world_o: world_o {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WORLD_O";
+            bindings = <&oe>, <&ooe>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        world_a: world_a {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WORLD_A";
+            bindings = <&ae>, <&aae>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     macros {
@@ -126,6 +144,86 @@
                 <&kp LALT>;
 
             label = "UUE";
+            wait-ms = <1>;
+            tap-ms = <1>;
+        };
+
+        oe: oe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp F &kp N6>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "OE";
+            wait-ms = <1>;
+            tap-ms = <1>;
+        };
+
+        ooe: ooe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp D &kp N6>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "OOE";
+            wait-ms = <1>;
+            tap-ms = <1>;
+        };
+
+        ae: ae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp E &kp N4>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "AE";
+            wait-ms = <1>;
+            tap-ms = <1>;
+        };
+
+        aae: aae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp C &kp N4>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "AAE";
+            wait-ms = <1>;
+            tap-ms = <1>;
+        };
+
+        sz: sz {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp N0 &kp N0 &kp D &kp F>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "SZ";
             wait-ms = <1>;
             tap-ms = <1>;
         };
@@ -184,10 +282,10 @@
 
         layer_6 {
             bindings = <
-&trans  &none   &none   &none   &none   &none     &none   &none     &none   &none   &none   &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &world_u  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans    &trans
+&trans  &none   &none   &none   &none   &none     &none     &none     &none     &none   &none   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &world_a  &world_u  &world_o  &sz     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans    &trans    &trans
             >;
         };
 
